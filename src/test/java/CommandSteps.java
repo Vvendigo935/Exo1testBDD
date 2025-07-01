@@ -35,6 +35,7 @@ public class CommandSteps {
     /* ____________________________________________________ */
 
 
+
     @Given("Customer {string} who want to command")
     public void customerWhoWantToCommand(String name){
         command = new Command();
@@ -42,8 +43,8 @@ public class CommandSteps {
     }
 
     @When("a command is made for the customer")
-    public void aCommandIsMadeForTheCustomer(String name){
-        command.setTo(name);
+    public void aCommandIsMadeForTheCustomer(){
+        command.setTo("");
 
     }
 
@@ -53,8 +54,8 @@ public class CommandSteps {
         Assert.assertEquals(2,command.getProducts().size());
     }
 
-    @And("the command comme from Customer {string}")
-    public void theCommandCommeFromCustomer(String name){
+    @And("the command comme from the Customer {string}")
+    public void theCommandCommeFromTheCustomer(String name){
         Assert.assertEquals(name,command.getFrom());
     }
 
